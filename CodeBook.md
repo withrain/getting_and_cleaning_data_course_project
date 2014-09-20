@@ -36,10 +36,12 @@ The details of data set variables are below.
 
 The remaining variables are the measurements for each subject and activity. The following table shows the variable names and the source variable names derived from features.txt
 Original variable names were modified.
+
 	1. Removed parenthesis ()
 	2. Replaced BodyBody with Body
 	3. Replaced prefix t with Time
 	4. Replaced prefix f with Frequency
+
 \-mean- and \-std- is remained because TimeBodyAcc-mean-X is more remarkable than TimeBodyAccMeanX
 
 Source Feature name|My Variable name
