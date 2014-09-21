@@ -33,8 +33,13 @@ X_final$Activity <- factor(X_final$Activity, labels = activity_labels$V2)
 # Step 4. Appropriately labels the data set with descriptive variable names
 names(X_final) <- sub("^f", "Frequency", 
                       sub("^t", "Time", 
-                          sub("BodyBody", "Body", 
-                              sub("\\(\\)", "", names(X_final)))))
+                          sub("-(.)([^-]*)-?", "\\U\\1\\E\\2",
+                              sub("BodyBody", "Body", 
+                                  sub("\\(\\)", "", names(X_final))
+                                  )
+                              , perl=TRUE)
+                          )
+                      )
 
 # Step 5. From the data set in step 4. creates a second, independent tidy data set 
 # with the average of each variable for each activity and each subject
