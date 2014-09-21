@@ -54,7 +54,7 @@ Original variable names were modified.
 	4. Replace prefix t with Time
 	5. Replace prefix f with Frequency
 
-\-mean- and \-std- is remained because TimeBodyAcc-mean-X is more remarkable than TimeBodyAccMeanX
+Uppercases is remained because I think that TimeBodyAccMeanX is more readable than timeboxaccmeanx
 
 Source Feature name|My Variable name
 -------|-------
