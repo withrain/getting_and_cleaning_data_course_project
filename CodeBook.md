@@ -45,7 +45,7 @@ The details of data set variables are below.
 	- Standing (5)
 	- Laying (6)
 
-The remaining variables are the measurements for each subject and activity. The following table shows the variable names and the source variable names derived from features.txt
+The remaining 66 variables are the measurements for each subject and activity. The following table shows the variable names and the source variable names derived from features.txt
 Original variable names were modified.
 
 	1. Removed parenthesis ()
