@@ -50,7 +50,7 @@ X <- rbind(X_train, X_test)
 features <- read.table("features.txt")
 names(X) <- features$V2
 ```
-Read X\_train.txt and X\_test.txt file (now there are two data frame X\_train, X\_test)
+Read X\_train.txt and X\_test.txt file(now there are two data frame X\_train, X\_test).
 And bind two variables to X by row with rbind function. X is 10299x561 dimension.
 Read another file features.txt and set column names of X data frame.
 
@@ -60,7 +60,7 @@ X_extract = X[grep("mean\\(\\)|std\\(\\)", features$V2)]
 ```
 To find a mean and standard deviation variables, I use grep function with features data frame
 and get indexes of variables I want.
-X\_extract is 10299x66 dimension
+X\_extract is 10299x66 dimension.
 
 Step 3. Uses descriptive activity names to name the activities in the data set
 ```R
@@ -79,9 +79,9 @@ X_final <- cbind(subject, activity, X_extract)
 activity_labels = read.table("activity_labels.txt")
 X_final$Activity <- factor(X_final$Activity, labels = activity_labels$V2)
 ```
-Read two subject file and rbind to subject data frame(10299x1 dimension)
-And read two activity file and rbind to activity data frame(10299x1 dimension)
-Bind three data frame - subject, activity, X\_extract - by column to X\_final (10299x68 dimension)
+Read two subject files and rbind to subject data frame(10299x1 dimension).
+And read two activity files and rbind to activity data frame(10299x1 dimension).
+Bind three data frame - subject, activity, X\_extract - by column to X\_final data frame(10299x68 dimension).
 To set descriptive name to Activity variable, use factor function and the label data derived from activity\_labels.txt
 
 Step 4. Appropriately labels the data set with descriptive variable names
@@ -99,12 +99,12 @@ names(X_final) <- sub("^f", "Frequency",
 For tidy data set, I modify variable names more descriptive using multiple sub function.
 - `sub("\\(\\)", ""` Removed parenthesis ()
 - `sub("BodyBody", "Body"` Replace BodyBody with Body
-- `sub("-(.)([^-]*)-?", "\\U\\1\\E\\2"` Replace -mean, -std with Mean, Std using Perl style regular expression. \\U convert following charactiers to uppercase. \\E turn off case conversion. I set option perl=TRUE to use \\U, \\E
+- `sub("-(.)([^-]*)-?", "\\U\\1\\E\\2"` Replace -mean, -std with Mean, Std using Perl style regular expression. \\U convert following characters to uppercase. \\E turn off case conversion. I set option perl=TRUE to use \\U, \\E.
 - `sub("^t", "Time"` Replace prefix t with Time
 - `sub("^f", "Frequency"` Replace prefix f with Frequency
 
 
-Step 5. From the data set in step 4. creates a second, independent tidy data set 
+Step 5. From the data set in step 4, creates a second and independent tidy data set 
 ```R
 # with the average of each variable for each activity and each subject
 library(plyr)
@@ -112,6 +112,6 @@ X_second_final = ddply(X_final, .(Subject, Activity), numcolwise(mean))
 
 write.table(X_second_final, "tidy_data.txt", row.names=FALSE)
 ```
-Finally, I calcualte the average of each numerical variables for each subject and each activity.
-I use ddply function of plyr package and numcolwise function to make X\_second\_final data frame(180x68 dimension)
+Finally, I calculate the average of each numerical variables for each subject and each activity.
+I use ddply function of plyr package and numcolwise function to make X\_second\_final data frame(180x68 dimension).
 And write X\_second\_final data frame to "tidy\_data.txt" file.
