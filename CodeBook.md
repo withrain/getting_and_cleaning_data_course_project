@@ -22,14 +22,14 @@ Other estimates have been removed for the purpose of this excercise.
 
 ## Transformation
 
-	- Read X_train.txt and X_test.txt and bind with row (10299x561 dimension)
-	- Read features.txt and set column name to the merged data set
-	- Extract mean, std columns using grep function with regular expression (10299x66 dimension)
-	- Read subject_train.txt, subject_test.txt and y_train.txt, y_test.txt, add columns to the merged data set (10299x68 dimension)
-	- Read activity_labels.txt and set activity names to name the activities in Activity column
-	- Replace column names to descriptive variable names for tidy data set by multiple sub function
-	- Calculate the average for each subject and each activity using ddply function (180x68 dimension)
-	- Write the data set to tidy_data.txt
+- Read X_train.txt and X_test.txt and bind with row (10299x561 dimension)
+- Read features.txt and set column name to the merged data set
+- Extract mean, std columns using grep function with regular expression (10299x66 dimension)
+- Read subject_train.txt, subject_test.txt and y_train.txt, y_test.txt, add columns to the merged data set (10299x68 dimension)
+- Read activity_labels.txt and set activity names to name the activities in Activity column
+- Replace column names to descriptive variable names for tidy data set by multiple sub function
+- Calculate the average for each subject and each activity using ddply function (180x68 dimension)
+- Write the data set to tidy_data.txt
 
 ## Variables
 
