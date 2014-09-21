@@ -1,10 +1,10 @@
 # CodeBook for Getting and Cleaning Data's Course Project
 
 ## Raw Data
-This data set is derived from the "Human Activity Recognition Using Smartphones Data Set" which was originally made avaiable here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Here is the data set available at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones, derived from the original "Human Activity Recognition Using Smartphones Data Set".
 
 ## Features
-I refer you to the README.txt and features.txt files in the original data set to learn more about the features for this data set. And there you will find the follow description:
+Refering to the README.txt and features.txt files int the data set, You will learn more about the features for the data set with the following description.
 
 > The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
 
@@ -12,17 +12,17 @@ I refer you to the README.txt and features.txt files in the original data set to
 
 > Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
-The reasoning behind my selection of features is that the assignment explicitly states "Extracts only the measurements on the mean and standard deviation for each measurement."
-To be complete, I included all variables having to do with mean or standard deviation.
+It is the reasoning of features of mine that the assignment clearly specifies "Extracts only the measurements on the mean and standard deviation for each measurement."
+My inclusion completely covers all variables related to mean or standard deviation.
 
 * mean(): Mean value
 * std(): Standard deviation
 
-Other estimates have been removed for the purpose of this excercise.
+No other estimates has remained for the exercise.
 
 ## Transformation
 
-* Read X_train.txt and X_test.txt and bind with row (10299x561 dimension)
+* Read X_train.txt and X_test.txt and bind to row (10299x561 dimension)
 * Read features.txt and set column name to the merged data set
 * Extract mean, std columns using grep function with regular expression (10299x66 dimension)
 * Read subject_train.txt, subject_test.txt and y_train.txt, y_test.txt, add columns to the merged data set (10299x68 dimension)
@@ -33,11 +33,11 @@ Other estimates have been removed for the purpose of this excercise.
 
 ## Variables
 
-Final Data set is X\_second_final (180x68 dimension). This data set is saved a file named "tidy\_data.txt"
-The details of data set variables are below.
+Final Data set is X\_second_final(180x68 dimension). This data set is saved to a file named "tidy\_data.txt".
+The details of data set variables are as below.
 
-* Subject: An integer value specifying a unique participant identifier in the range 1 to 30. There are derived from "subject\_train.txt" and "subject_test.txt"
-* Activity: A factor describing the type of activity being measured. There are 6 activities derived from "activitiy_label.txt"
+* Subject: It is derived from "subject\_train.txt" and "subject_test.txt" that an integer value specifies a unique participant identifier in the scale of 1 - 30.
+* Activity: It is derived from "activitiy_label.txt" that a factor describes the type of measured activity.
 	- Walking (1)
 	- Walking Upstairs (2)
 	- Walking Downstairs (3)
@@ -45,8 +45,7 @@ The details of data set variables are below.
 	- Standing (5)
 	- Laying (6)
 
-The remaining 66 variables are the measurements for each subject and activity. The following table shows the variable names and the source variable names derived from features.txt
-Original variable names were modified.
+There are left 66 variables for the measurements of each subject and activity. The following tells you the variable names and the source variable names originated from features.txt but revised.
 
 	1. Removed parenthesis ()
 	2. Replace BodyBody with Body
@@ -54,7 +53,7 @@ Original variable names were modified.
 	4. Replace prefix t with Time
 	5. Replace prefix f with Frequency
 
-Uppercases is remained because I think that TimeBodyAccMeanX is more readable than timeboxaccmeanx
+The following uppercases remain due to the more readable TimeBodyAccMeanX than timeboxaccmeanx
 
 Source Feature name|My Variable name
 -------|-------
